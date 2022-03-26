@@ -1,1 +1,0 @@
-{"filename": "builds/b28eb2bd0fa04458581c27cb7c86720e286bf8deb1109c3c96e1f4b65371e4ac.zip", "runtime": "nodejs14.x", "artifacts_dir": "builds", "build_plan": [["zip", "../../../dist/unlucky", null]]}
