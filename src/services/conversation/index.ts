@@ -644,8 +644,15 @@ const routeDestination = async (sessionData, twilioData) => {
 
   await markCompleted(gridSession, foundNearby);
 
+  const finderMessage = await translateText(
+    wordFilter.clean(
+      `We found a match! ${gridSession.Name} will meet you at ${foundNearby['Pickup Location']} within the next 5 minutes. Happy riding!`,
+    ),
+    foundNearby.Language,
+  );
+
   await twilioClient.messages.create({
-    body: `We found a match! ${gridSession.Name} will meet you at ${foundNearby['Pickup Location']} within the next 5 minutes. Happy riding!`,
+    body: finderMessage,
     from: TWILIO_PHONE_NUMBER,
     to: foundNearby['Phone #'],
   });
@@ -659,7 +666,7 @@ const routeDestination = async (sessionData, twilioData) => {
 
   return {
     reply,
-    updatedSession: { ...sessionData, messageId: 'initial' },
+    updatedSession: { ...sessionData, messageId: 'initial', lang: null },
   };
 };
 
