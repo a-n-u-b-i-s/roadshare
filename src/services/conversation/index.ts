@@ -680,8 +680,9 @@ const routeSearching = async (sessionData, twilioData) => {
   const gridSession = await findSession(sessionData, twilioData);
   if (
     !gridSession ||
-    gridSession.Completed ||
-    gridSession.Searching === false
+    gridSession.Completed === 'true' ||
+    gridSession.Searching === 'false' ||
+    gridSession.Expired === 'true'
   ) {
     const response = await routeInitial(sessionData, twilioData);
     return response;
