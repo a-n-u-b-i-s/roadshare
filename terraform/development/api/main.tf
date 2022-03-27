@@ -45,11 +45,16 @@ variable domain_name {
 # Local Variables
 locals {
   conversation_service_lambda_name = "${var.project}-conversation-service-${var.environment}"
+  unlucky_service_lambda_name = "${var.project}-unlucky-service-${var.environment}"
 }
 
 # Data Sources
 data "aws_lambda_function" "conversation_service_lambda" {
   function_name = local.conversation_service_lambda_name
+}
+
+data "aws_lambda_function" "unlucky_service_lambda" {
+  function_name = local.unlucky_service_lambda_name
 }
 
 # Domain Name SSL Certificate
@@ -122,7 +127,7 @@ module "api_gateway" {
   }
 }
 
-resource "aws_lambda_permission" "lambda_permission" {
+resource "aws_lambda_permission" "conversation_lambda_permission" {
   statement_id  = "AllowConversationAPIInvoke"
   action        = "lambda:InvokeFunction"
   function_name = local.conversation_service_lambda_name
@@ -131,6 +136,19 @@ resource "aws_lambda_permission" "lambda_permission" {
   # The /*/*/* part allows invocation from any stage, method and resource path
   # within API Gateway REST API.
   source_arn = "${module.api_gateway.apigatewayv2_api_execution_arn}/*/*/*"
+}
+
+resource "aws_cloudwatch_event_rule" "cron_job" {
+  name = "${var.project}-cron-job-${var.environment}"
+  schedule_expression = "rate(10 minutes)"
+}
+
+resource "aws_lambda_permission" "unlucky_lambda_permission" {
+  statement_id  = "AllowUnluckyAPIInvoke"
+  action        = "lambda:InvokeFunction"
+  function_name = local.unlucky_service_lambda_name
+  principal     = "events.amazonaws.com"
+  source_arn    = aws_cloudwatch_event_rule.cron_job.arn
 }
 
 resource "aws_route53_record" "APIGatewayMapping" {
@@ -143,4 +161,9 @@ resource "aws_route53_record" "APIGatewayMapping" {
     zone_id                = module.api_gateway.apigatewayv2_domain_name_configuration[0].hosted_zone_id
     evaluate_target_health = false
   }
+}
+
+resource "aws_cloudwatch_event_target" "cron_job_lambda_function" {
+  rule = "${var.project}-cron-job-${var.environment}"
+  arn  = data.aws_lambda_function.unlucky_service_lambda.arn
 }

@@ -86,20 +86,6 @@ module "conversation_service" {
   name = "conversation-service"
   description = "Twilio Conversation Lambda Function"
 
-  attach_policy_statements = true
-  policy_statements = {
-    eventbridge_full_access = {
-      effect    = "Allow",
-      actions   = ["events:*"],
-      resources  = ["*"]
-    },
-    iam_pass_role = {
-      effect    = "Allow",
-      actions   = ["iam:PassRole"],
-      resources  = ["arn:aws:iam::*:role/AWS_Events_Invoke_Targets"]
-    }
-  }
-
   environment_variables = merge(
     var.global_environment_variables,
     var.conversation_service_environment_variables
