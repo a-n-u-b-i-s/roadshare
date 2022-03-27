@@ -266,9 +266,9 @@ Anubis - anubis@intellibus.com | aw3852@nyu.edu
 
 Neil Kothari - nak5c@viginia.edu
 
-Kate Chadwick - @viginia.edu
+Kate Chadwick - zur5ms@viginia.edu
 
-Abby Dhakal - @viginia.edu
+Abby Dhakal - wgq3bt@viginia.edu
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
