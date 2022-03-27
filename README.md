@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://github.com/a-n-u-b-i-s/roadshare">
-    <img src="images/main.jpeg" width="733" height="412">
+    <img src="images/main.jpeg" width="564" height="317">
   </a>
 </p>
 
