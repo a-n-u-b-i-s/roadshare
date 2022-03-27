@@ -784,7 +784,7 @@ const conversation = async (
     );
   }
 
-  if (!sessionData.lang || sessionData.messageId === 'initial') {
+  if (sessionData.messageId !== 'name') {
     sessionData.lang = messageLanguage;
   }
 
