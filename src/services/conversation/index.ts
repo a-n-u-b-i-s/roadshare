@@ -517,9 +517,9 @@ const findNearby = async (gridSession, geocodedResult) => {
       columnFilter: {
         filters: [
           {
-            column: '_id',
+            column: 'Phone #',
             operator: 'NEQ',
-            keyword: gridSession._id,
+            keyword: gridSession['Phone #'],
           },
           {
             column: 'Pickup Zip',
