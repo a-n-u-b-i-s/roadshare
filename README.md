@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://github.com/a-n-u-b-i-s/roadshare">
-    <img src="images/main.jpeg" width="300" height="200">
+    <img src="images/main.jpeg" width="400" height="200">
   </a>
 </p>
 
@@ -187,7 +187,7 @@ Application Features:
 Below is a "simple" architecture diagram.
 
 <p align="center">
-  <img src="images/architecture.png" width="300" height="200">
+  <img src="images/architecture.png" width="300" height="300">
 </p>
 
 Each File & Folder Explained:
