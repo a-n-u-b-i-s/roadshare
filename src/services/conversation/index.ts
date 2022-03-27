@@ -199,7 +199,7 @@ const routeInitial = async (sessionData, twilioData) => {
 };
 
 const parseName = (message: string) => {
-  const name = message.replace(/my name is/gi, '');
+  const name = message.replace(/my name is/gi, '').trim();
   return name;
 };
 
@@ -760,9 +760,11 @@ const conversation = async (
   log.debug(JSON.stringify(sessionData));
   log.debug(JSON.stringify(twilioData));
 
-  if ((twilioData as MessagingWebhookBody).Body === 'RESET') {
+  if (
+    (twilioData as MessagingWebhookBody).Body.trim().toUpperCase() === 'RESET'
+  ) {
     return util._200(
-      'DONE',
+      'Reset the session, Send "Find Me a Ride" in any language of your choice',
       `session_data=${JSON.stringify({ messageId: 'initial' })};Max-Age=0`,
     );
   }
