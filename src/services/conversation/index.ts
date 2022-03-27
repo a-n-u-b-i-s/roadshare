@@ -358,10 +358,13 @@ const routePickup = async (sessionData, twilioData) => {
   const geocodedResult = (await getGeocodedLocation(twilioData)).data
     .results[0];
 
-  const isNotValidAddress = geocodedResult.types.every((type) => {
-    const isNotValidType = !APPROVED_LOCATION_TYPES.includes(type);
-    return isNotValidType;
-  });
+  const isNotValidAddress =
+    !geocodedResult ||
+    !geocodedResult.types ||
+    geocodedResult.types.every((type) => {
+      const isNotValidType = !APPROVED_LOCATION_TYPES.includes(type);
+      return isNotValidType;
+    });
 
   log.debug(`${isNotValidAddress}`);
 
@@ -596,10 +599,13 @@ const routeDestination = async (sessionData, twilioData) => {
   const geocodedResult = (await getGeocodedLocation(twilioData)).data
     .results[0];
 
-  const isNotValidAddress = geocodedResult.types.every((type) => {
-    const isNotValidType = !APPROVED_LOCATION_TYPES.includes(type);
-    return isNotValidType;
-  });
+  const isNotValidAddress =
+    !geocodedResult ||
+    !geocodedResult.types ||
+    geocodedResult.types.every((type) => {
+      const isNotValidType = !APPROVED_LOCATION_TYPES.includes(type);
+      return isNotValidType;
+    });
 
   log.debug(`${isNotValidAddress}`);
 
