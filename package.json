@@ -18,6 +18,7 @@
     "@a-n-u-b-i-s/bigparser": "^1.0.6",
     "@google-cloud/translate": "^6.3.1",
     "@googlemaps/google-maps-services-js": "^3.3.11",
+    "@types/lodash": "^4.14.180",
     "esbuild": "^0.14.28",
     "execa": "^6.1.0",
     "glob": "^7.2.0",
@@ -32,7 +33,6 @@
     "@types/aws-lambda": "^8.10.92",
     "@types/glob": "^7.2.0",
     "@types/lambda-log": "^2.2.1",
-    "@types/lodash": "^4.14.178",
     "@types/mailparser": "^3.4.0",
     "@types/node": "^17.0.19",
     "@types/pdf-parse": "^1.1.1",
@@ -104,7 +104,8 @@
     ],
     "rules": {
       "import/prefer-default-export": "off",
-      "no-underscore-dangle": "off"
+      "no-underscore-dangle": "off",
+      "operator-linebreak": "off"
     }
   },
   "lint-staged": {
