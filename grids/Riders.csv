@@ -1,1 +1,1 @@
-Language,Phone #,Name,Pickup Location,Pickup GeoData,Pickup Zip,Pickup State,Pickup Country,Destination Location,Destination GeoData,Destination Zip,Created Timestamp,Expired,Completed
+"Language","Phone #","Name","Pickup Location","Pickup GeoData","Pickup Zip","Pickup State","Destination Location","Destination GeoData","Destination Zip","Destination State","Created Timestamp","Searching","Expired","Completed"
