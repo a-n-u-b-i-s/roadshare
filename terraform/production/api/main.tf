@@ -22,13 +22,13 @@ provider "aws" {
 variable "project" {
   type = string
   description = "Project To Deploy Under"
-  default = "hoohacks-2022"
+  default = "roadshare"
 }
 
 variable "environment" {
   type = string
   description = "Environment To Deploy Under"
-  default = "development"
+  default = "production"
 }
 
 variable default_region {
