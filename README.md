@@ -263,8 +263,11 @@ CI / CD Deployments: Adding Automated Unit & Integration Tests & only allowing d
 ## Contact
 
 Anubis - anubis@intellibus.com | aw3852@nyu.edu
+
 Neil Kothari - nak5c@viginia.edu
+
 Kate Chadwick - @viginia.edu
+
 Abby Dhakal - @viginia.edu
 
 <p align="right">(<a href="#top">back to top</a>)</p>
