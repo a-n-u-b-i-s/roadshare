@@ -1,6 +1,5 @@
 # Roadshare — Split a Rideshare
 
-[![Contributors][contributors-shield]][contributors-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 
@@ -270,8 +269,6 @@ Abby Dhakal - @viginia.edu
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-[contributors-shield]: <https://img.shields.io/github/contributors/a-n-u-b-i-s/roadshare.svg?style=flat-square>
-[contributors-url]: <https://github.com/a-n-u-b-i-s/roadshare/graphs/contributors>
 [forks-shield]: <https://img.shields.io/github/forks/a-n-u-b-i-s/roadshare.svg?style=flat-square>
 [forks-url]: <https://github.com/a-n-u-b-i-s/roadshare/network/members>
 [stars-shield]: <https://img.shields.io/github/stars/a-n-u-b-i-s/roadshare.svg?style=flat-square>
